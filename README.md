@@ -12,7 +12,7 @@ Happy hacking!
 
 > https://puc-campinas.instructure.com/courses/51260/assignments/159955?module_item_id=361238
 
-![Protótipo](./.github/project.png)
+![Protótipo](.github/project.png)
 
 ## 🤝 Integrantes
 
