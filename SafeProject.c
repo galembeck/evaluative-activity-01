@@ -56,7 +56,7 @@ void successfulOpening() {
 
 void unsuccessfulOpening() {
     printf("\n Infelizmente suas tentativa de abertura do cofre se esgotaram!");
-    printf("\n Me parece que este cofre não te pertence, por esse motivo, não será possível lhe entregar seus pertences :(\n");
+    printf("\n Me parece que este cofre não te pertence, por esse motivo, não será possível lhe entregar seus pertences :(\n\n");
 }
 
 void exit(int status);
@@ -70,14 +70,20 @@ int main() {
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
 
-    // introMessage();
+    introMessage();
 
-    // sleep(1);
-    // printf("\n Pressione qualquer tecla para continuar (...)");
-    // getchar();
-    // system("cls");
+    sleep(1);
+    printf("\n Pressione qualquer tecla para continuar (...)");
+    getchar();
+    system("cls");
 
     do {
+        C1 = 0;
+        C2 = 0;
+        C5 = 0;
+        C7 = 0;
+        C8 = 0;
+
         do {
             printf("\n Primeiramente, informe quantos movimentos você deseja realizar (no máximo 4 movimentos): ");
             scanf("%d", &movements);
@@ -129,7 +135,7 @@ int main() {
 
             if(position_to > initial_position) {
                 for(i = initial_position; i <= position_to; i++) {
-                    initial_position = position_to + 1;
+                    // initial_position = position_to + 1;
 
                     // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
 
@@ -145,9 +151,11 @@ int main() {
                         C8++;
                     }
                 }
+
+                initial_position = position_to + 1;
             } else {
                 for(i = initial_position; i >= position_to; i--) {
-                    initial_position = position_to + 1;
+                    // initial_position = position_to + 1;
 
                     // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
 
@@ -163,6 +171,8 @@ int main() {
                         C8++;
                     }
                 }
+
+                initial_position = position_to + 1;
             }
         }
 
@@ -203,6 +213,6 @@ int main() {
 
     sleep(1);
 
-    system("pause");
+    // system("pause");
     return 0;
 }
