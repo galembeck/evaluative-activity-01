@@ -14,18 +14,15 @@ void introMessage() {
     sleep(1);
     printf("\n\n Acho que para descobrir se eu te pertenço, você precisa acertar minha senha/combinação, para que, assim, eu possa abrir e entregá-lo seus petences :)");
 
-    sleep(1);
+    sleep(4);
     printf("\n\n Funciona assim, eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até 4 vezes.\n Cada vez que um número aparece, é adicionado 1 ao valor de contagem e a contagem geral, por sua vez, será a senha.");
 
-    sleep(1);
     printf("\n\n Essa é a barra:");
     printf("  | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | (7) | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
 
-    sleep(1);
     printf("\n\n A posição 10 (número 7) indica o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
 
-    sleep(1);
-    printf("\n\n Vamos começar!\n\n");
+    printf("\n\n Vamos começar!\n");
 }
 
 void safeBarShowcase() {
@@ -59,7 +56,7 @@ void successfulOpening() {
 
 void unsuccessfulOpening() {
     printf("\n Infelizmente suas tentativa de abertura do cofre se esgotaram!");
-    printf("\n Me parece que este cofre não te pertence, por esse motivo, não será possível lhe entregar seus pertences :(\n\n");
+    printf("\n Me parece que este cofre não te pertence, por esse motivo, não será possível lhe entregar seus pertences :(\n");
 }
 
 void exit(int status);
@@ -67,14 +64,15 @@ void exit(int status);
 int main() {
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
-    int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values
+    int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
     int trys = 0, i, movements, initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
 
     introMessage();
 
     sleep(1);
-    system("pause");
+    printf("\n Pressione qualquer tecla para continuar (...)");
+    getchar();
     system("cls");
 
     do {
@@ -89,10 +87,11 @@ int main() {
             }
         } while((movements <= 0) || (movements > 4));
 
-        printf("\n Ótimo! Agora com o número de movimentos a serem realizadas definido, podemos continuar para a abertura do cofre.\n\n");
+        printf("\n Ótimo! Agora com o número de movimentos a serem realizadas definido, podemos continuar para a abertura do cofre.\n");
 
         sleep(1);
-        system("pause");
+        printf("\n Pressione qualquer tecla para continuar (...)");
+        getchar();
         system("cls");
 
         sleep(1);
@@ -136,7 +135,8 @@ int main() {
             printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
 
             sleep(3);
-            system("pause");
+            printf("\n Pressione qualquer tecla para continuar (...)");
+            getchar();
             system("cls");
         }
     } while(trys < 3);
