@@ -14,13 +14,13 @@ void introMessage() {
     sleep(1);
     printf("\n\n Acho que para descobrir se eu te pertenço, você precisa acertar minha senha/combinação, para que, assim, eu possa abrir e entregá-lo seus pertences :)");
 
-    sleep(4);
-    printf("\n\n Funciona assim, eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até 4 vezes.\n Cada vez que um número aparece, é adicionado 1 ao valor de contagem e a contagem geral, por sua vez, será a senha.");
+    sleep(2);
+    printf("\n\n Funciona assim: eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até 4 vezes.\n Cada vez que um número aparece, é adicionado 1 ao valor de contagem e a contagem geral, por sua vez, será a senha.");
 
     printf("\n\n Essa é a barra:");
     printf(" | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | (7) | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
 
-    printf("\n A posição 10 (número 7) indica o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
+    printf("\n\n A posição 10 (número 7) indica o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
 
     printf("\n\n Vamos começar!\n");
 }
@@ -85,7 +85,15 @@ int main() {
         C8 = 0;
 
         do {
-            printf("\n Primeiramente, informe quantos movimentos você deseja realizar (no máximo 4 movimentos): ");
+            sleep(1);
+
+            // printf("\n Primeiramente, informe quantos movimentos você deseja realizar (no máximo 4 movimentos): ");
+            printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
+            printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para a processo de abertura.");
+            printf("\n\n º Obs: É importante ressaltar que podem ser realizados, ao todo, no máximo 4 deslizamentos.");
+
+            sleep(1);
+            printf("\n\n Informe a quantidade de deslizamentos a serem realizados: ");
             scanf("%d", &movements);
 
             if(movements <= 0) {
@@ -95,15 +103,18 @@ int main() {
             }
         } while((movements <= 0) || (movements > 4));
 
-        printf("\n Ótimo! Agora com o número de movimentos a serem realizadas definido, podemos continuar para a abertura do cofre.\n");
+        printf("\n Ótimo! Agora com o número de movimentos a serem realizadas definido, podemos continuar para a abertura do cofre.\n\n");
 
         sleep(3);
+        system("pause");
         system("cls");
 
         sleep(1);
 
         safeBarShowcase();
-        printf("\n\n Tudo pronto! Agora será necessário informar as posições desejadas para o deslocamento do limite.\n");
+
+        printf("\n\n Tudo pronto! Agora, com a informação do número de deslizamentos para o processo de abertura, podemos prosseguir.");
+        printf("\n Nessa etapa, será necessário informar as posições desejadas para o deslocamento do limite.\n");
 
         /*
         for(i = 0; i < movements; i++) {
@@ -124,7 +135,7 @@ int main() {
         */
 
         for(k = 0; k < movements; k++) {
-            printf("\n Informe o limite para o \"%dº\" deslocamento: ", k+1);
+            printf("\n º Informe o limite para o \"%dº\" deslocamento: ", k+1);
             scanf("%d", &position_to);
 
             if(position_to < 0) {
