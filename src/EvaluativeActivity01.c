@@ -84,15 +84,16 @@ int main() {
         C7 = 0;
         C8 = 0;
 
+        sleep(1);
+
+        printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
+        printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para a processo de abertura.");
+        printf("\n\n º Observação: é importante ressaltar que você realizar pelo menos 1 deslizamentos e, no máximo, 4 deslizamentos totais.\n");
+
+        sleep(1);
+
         do {
-            sleep(1);
-
-            printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
-            printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para a processo de abertura.");
-            printf("\n\n º Observação: é importante ressaltar que você realizar pelo menos 1 deslizamentos e, no máximo, 4 deslizamentos totais.");
-
-            sleep(1);
-            printf("\n\n Informe a quantidade de deslizamentos a serem realizados: ");
+            printf("\n Informe a quantidade de deslizamentos a serem realizados: ");
             scanf("%d", &movements);
 
             if(movements <= 0) {
@@ -137,14 +138,13 @@ int main() {
             printf("\n º Informe o limite (posição) para o \"%dº\" deslocamento: ", k+1);
             scanf("%d", &position_to);
 
-            if(position_to < 0) {
+                if(position_to < 0) {
                 printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!\n");
 
-                sleep(1);
+                // sleep(1);
 
-                exit(0);
+                // exit(0);
 
-                /*
                 sleep(3);
 
                 system("cls");
@@ -159,8 +159,6 @@ int main() {
 
                 switch(return_option) {
                     case 1:
-                        sleep(2);
-
                         printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel inicial de abertura do cofre.");
 
                         sleep(1);
@@ -170,14 +168,14 @@ int main() {
                         printf("  2  ...");
 
                         sleep(1);
-                        printf("  1  ...");
 
+                        printf("  1  ...");
                         sleep(1);
+
+                        system("cls");
                         break;
 
                     case 2:
-                        sleep(2);
-
                         printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
 
                         sleep(1);
@@ -195,9 +193,7 @@ int main() {
                     default:
                         printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
                 }
-
-                // break;
-                */
+                break;
             }
 
             if(position_to > initial_position) {
@@ -243,36 +239,39 @@ int main() {
             }
         }
 
-        sleep(1);
-        printf("\n Perfeito! Agora, ao término de todos os movimentos estipulados anteriormente, já temos a combinação formada.");
-
-        sleep(3);
-        system("cls");
-
-        printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
-
-        // C1 = 5 | C2 = 12 | C5 = 3 | C7 = 7 | C8 = 6
-
-        // if(password == 512376) {
-        if((C1 == 5) && (C2 == 12) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
-            combinationAnalysis();
-
-            system("cls");
-
-            successfulOpening();
-
-            exit(0);
-        } else {
-            trys++;
-
-            combinationAnalysis();
-
-            printf("\n\n Hmmm... me parece que a senha inserida após os deslizamentos está incorreta!");
-            printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
-
+        while(return_option != 1) {
             sleep(1);
-            system("pause");
+
+            printf("\n Perfeito! Agora, ao término de todos os movimentos estipulados anteriormente, já temos a combinação formada.");
+
+            sleep(3);
             system("cls");
+
+            printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
+
+            // C1 = 5 | C2 = 12 | C5 = 3 | C7 = 7 | C8 = 6
+
+            // if(password == 512376) {
+            if((C1 == 5) && (C2 == 12) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
+                combinationAnalysis();
+
+                system("cls");
+
+                successfulOpening();
+
+                exit(0);
+            } else {
+                trys++;
+
+                combinationAnalysis();
+
+                printf("\n\n Hmmm... me parece que a senha inserida após os deslizamentos está incorreta!");
+                printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
+
+                sleep(1);
+                system("pause");
+                system("cls");
+            }
         }
     } while(trys < 3);
 
