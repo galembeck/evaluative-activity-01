@@ -1,4 +1,4 @@
-# 🔑 | Evaluative Activity (A1) | Computer Programming
+# 🔑 | Atividade Avaliativa (A1) | Programação de Computadores
 
 Bem-vindo(a) ao repositório que contém a solução para o problema proposto na atividade avaliativa "A1" da disciplina de Programação de Computadores (orientadora: Lúcia Filomena de Almeida Guimarães) do curso de Engenharia de Computação da [@PUC-Campinas](httpsL://puc-campinas.com).
 
