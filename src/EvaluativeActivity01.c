@@ -15,14 +15,14 @@ void introMessage() {
     printf("\n\n Acho que para descobrir se eu te pertenço, você precisa acertar minha senha/combinação, para que, assim, eu possa abrir e entregá-lo seus pertences :)");
 
     sleep(2);
-    printf("\n\n Funciona assim: eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até 4 vezes.\n Cada vez que um número aparece, é adicionado 1 ao valor de contagem e a contagem geral, por sua vez, será a senha.");
+    printf("\n\n Funciona assim: eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até, no máximo\n 4 vezes, cujo número de deslizamentos a serem realizados será definido por você a seguir.\n\n Após um deslizamento, cada vez que um dígito aparece entre os novos limites estabelecidos, será adicionado 1 ao valor\n de contagem e a contagem geral, por sua vez, será a combinação correta.");
 
     printf("\n\n Essa é a barra:");
     printf(" | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | (7) | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
 
-    printf("\n\n A posição 10 (número 7) indica o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
+    printf("\n\n A posição 10 (número 7) indicada na barra acima representa o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
 
-    printf("\n\n Vamos começar!\n");
+    printf("\n\n Agora, com todas as instruções, podemos começar!\n");
 }
 
 void safeBarShowcase() {
@@ -65,8 +65,8 @@ int main() {
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, initial_position = 10, position_to;
-    int C1 = 0, C2 = 0, C5 = 0, C7 = 0, C8 = 0;
+    int trys = 0, k, i, movements, return_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int C1 = 0, C2 = 0, C5 = 0, C7 = 0, C8 = 0; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
 
@@ -87,10 +87,9 @@ int main() {
         do {
             sleep(1);
 
-            // printf("\n Primeiramente, informe quantos movimentos você deseja realizar (no máximo 4 movimentos): ");
             printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
             printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para a processo de abertura.");
-            printf("\n\n º Obs: É importante ressaltar que podem ser realizados, ao todo, no máximo 4 deslizamentos.");
+            printf("\n\n º Observação: é importante ressaltar que você realizar pelo menos 1 deslizamentos e, no máximo, 4 deslizamentos totais.");
 
             sleep(1);
             printf("\n\n Informe a quantidade de deslizamentos a serem realizados: ");
@@ -105,7 +104,7 @@ int main() {
 
         printf("\n Ótimo! Agora com o número de movimentos a serem realizadas definido, podemos continuar para a abertura do cofre.\n\n");
 
-        sleep(3);
+        sleep(2);
         system("pause");
         system("cls");
 
@@ -135,13 +134,70 @@ int main() {
         */
 
         for(k = 0; k < movements; k++) {
-            printf("\n º Informe o limite para o \"%dº\" deslocamento: ", k+1);
+            printf("\n º Informe o limite (posição) para o \"%dº\" deslocamento: ", k+1);
             scanf("%d", &position_to);
 
             if(position_to < 0) {
                 printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!\n");
 
+                sleep(1);
+
                 exit(0);
+
+                /*
+                sleep(3);
+
+                system("cls");
+
+                printf("\n Ainda é possível retornar ao painel inicial de abertura do cofre...");
+                printf("\n\n Para isso, abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.");
+                printf("\n º Digite \"1\" caso você queira retornar ao painel inicial.");
+                printf("\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.");
+
+                printf("\n\n Opção: ");
+                scanf("%d", &return_option);
+
+                switch(return_option) {
+                    case 1:
+                        sleep(2);
+
+                        printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel inicial de abertura do cofre.");
+
+                        sleep(1);
+                        printf("\n\n 3  ...");
+
+                        sleep(1);
+                        printf("  2  ...");
+
+                        sleep(1);
+                        printf("  1  ...");
+
+                        sleep(1);
+                        break;
+
+                    case 2:
+                        sleep(2);
+
+                        printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
+
+                        sleep(1);
+                        printf("\n\n 3  ...");
+
+                        sleep(1);
+                        printf("  2  ...");
+
+                        sleep(1);
+                        printf("  1  ...\n");
+
+                        sleep(1);
+
+                        exit(0);
+                    default:
+                        printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
+                }
+
+                // break;
+                */
             }
 
             if(position_to > initial_position) {
