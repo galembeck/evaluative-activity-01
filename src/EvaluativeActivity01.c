@@ -54,7 +54,7 @@ void successfulOpening() { // Creating a "successfulOpening()" function to show 
     sleep(1);
     printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)\n");
     printf("\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
-    printf("\n\n Obrigado por utilizar meu serviço! Tenha um ótimo dia.\n");
+    printf("\n\n Obrigado por utilizar meu serviço! Tenha um ótimo dia.\n\n");
 }
 
 void unsuccessfulOpening() { // Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed
@@ -70,7 +70,7 @@ int main() { // Creating the "main" structure of the code/project
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int trys = 0, k, i, movements, return_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
     int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
@@ -83,21 +83,21 @@ int main() { // Creating the "main" structure of the code/project
     system("cls");
 
     do {
-        C1 = 1;
+        C1 = 0;
         C2 = 0;
         C5 = 0;
-        C7 = 0;
+        C7 = 1;
         C8 = 0;
 
         initial_position = 10;
 
-        // sleep(1);
+        sleep(1);
 
-        // printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
-        // printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
-        // printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.\n");
+        printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
+        printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
+        printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.\n");
 
-        // sleep(1);
+        sleep(1);
 
         do {
             printf("\n º Informe a quantidade de deslizamentos a serem realizados: ");
@@ -172,14 +172,14 @@ int main() { // Creating the "main" structure of the code/project
                         printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel inicial de abertura do cofre.");
 
                         sleep(1);
-                        printf("\n\n 3  ...");
+                        printf("\n\n 3,");
 
                         sleep(1);
-                        printf("  2  ...");
+                        printf("    2,");
 
                         sleep(1);
 
-                        printf("  1  ...");
+                        printf("    1");
                         sleep(1);
 
                         system("cls");
@@ -189,13 +189,13 @@ int main() { // Creating the "main" structure of the code/project
                         printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
 
                         sleep(1);
-                        printf("\n\n 3  ...");
+                        printf("\n\n 3,");
 
                         sleep(1);
-                        printf("  2  ...");
+                        printf("    2,");
 
                         sleep(1);
-                        printf("  1  ...\n");
+                        printf("    1\n");
 
                         sleep(1);
 
@@ -207,52 +207,44 @@ int main() { // Creating the "main" structure of the code/project
                 */
             }
 
-            if(position_to > initial_position) {
-                for(i = initial_position; i < position_to; i++) {
-                    // initial_position = position_to + 1;
-
-                    // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
-
-                    if(safe_bar[i] == 1) {
+            if (position_to > initial_position) {
+                for (i = initial_position + 1; i <= position_to; i++) {
+                    if (safe_bar[i] == 1) {
                         C1++;
-                    } else if(safe_bar[i] == 2) {
+                    } else if (safe_bar[i] == 2) {
                         C2++;
-                    } else if(safe_bar[i] == 5) {
+                    } else if (safe_bar[i] == 5) {
                         C5++;
-                    } else if(safe_bar[i] == 7) {
+                    } else if (safe_bar[i] == 7) {
                         C7++;
-                    } else if(safe_bar[i] == 8) {
+                    } else if (safe_bar[i] == 8) {
                         C8++;
                     }
                 }
-
+                // printf("\nC1: %d, C2: %d, C5: %d, C7: %d, C8: %d", C1, C2, C5, C7, C8);
                 initial_position = position_to;
             } else {
-                for(i = initial_position; i > position_to; i--) {
-                    // initial_position = position_to + 1;
-
-                    // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
-
-                    if(safe_bar[i] == 1) {
+                for (i = initial_position - 1; i >= position_to; i--) {
+                    if (safe_bar[i] == 1) {
                         C1++;
-                    } else if(safe_bar[i] == 2) {
+                    } else if (safe_bar[i] == 2) {
                         C2++;
-                    } else if(safe_bar[i] == 5) {
+                    } else if (safe_bar[i] == 5) {
                         C5++;
-                    } else if(safe_bar[i] == 7) {
+                    } else if (safe_bar[i] == 7) {
                         C7++;
-                    } else if(safe_bar[i] == 8) {
+                    } else if (safe_bar[i] == 8) {
                         C8++;
                     }
                 }
-
+                // printf("\nC1: %d, C2: %d, C5: %d, C7: %d, C8: %d", C1, C2, C5, C7, C8);
                 initial_position = position_to;
             }
         }
 
         sleep(1);
 
-        printf("\n Perfeito! Agora, ao término de todos os movimentos estipulados anteriormente, já temos a combinação formada.");
+        printf("\n Perfeito! Agora, ao término dos movimentos estipulados anteriormente, já temos a combinação formada.");
 
         sleep(3);
         system("cls");
