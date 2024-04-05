@@ -7,29 +7,30 @@
 
 #define length 25 // Defining the maximum length of the vector ("safe_bar") to 25 positions (0 - 24)
 
-void introMessage() {
-    printf("\n Olá! Eu sou um cofre.");
-    printf("\n Talvez eu seja seu cofre...");
+void introMessage() { // Creating a "introMessage()" function to show the introduction message
+    printf("\n Olá! Eu sou um cofre virtual...");
+    printf("\n Eu represento uma simulação digital de um mecanismo de segurança.");
 
     sleep(1);
-    printf("\n\n Acho que para descobrir se eu te pertenço, você precisa acertar minha senha/combinação, para que, assim, eu possa abrir e entregá-lo seus pertences :)");
+    printf("\n\n Acho que para descobrir se eu te pertenço, será necessário acertar a senha/combinação, para que, assim, eu possa abrir\n e entregá-lo seus pertences :)");
 
     sleep(2);
-    printf("\n\n Funciona assim: eu possuo uma barra de 25 posições (iniciando na posição 10) que deverá ser movimentada até, no máximo\n 4 vezes, cujo número de deslizamentos a serem realizados será definido por você a seguir.\n\n Após um deslizamento, cada vez que um dígito aparece entre os novos limites estabelecidos, será adicionado 1 ao valor\n de contagem e a contagem geral, por sua vez, será a combinação correta.");
+    printf("\n\n Aqui está o funcionamento: possuo uma barra de 25 posições, começando na posição 10, que pode ser movida até 4 vezes.");
+    printf("\n Durante cada movimento, os números entre os novos limites estabelecidos serão contados.");
 
     printf("\n\n Essa é a barra:");
     printf(" | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | (7) | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
 
-    printf("\n\n A posição 10 (número 7) indicada na barra acima representa o início, a partir da qual você deslocará o limite.\n A partir da primeira movimentação, serão contados todos os números até a senha/combinação correta.");
+    printf("\n\n O número 7, na posição 10, marca o início dos movimentos.\n A partir deste ponto, você moverá os limites para revelar a combinação correta.");
 
     printf("\n\n Agora, com todas as instruções, podemos começar!\n");
 }
 
-void safeBarShowcase() {
+void safeBarShowcase() { // Creating a "safeBarShowcase()" to show the bar when necessary
     printf("\n | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | 7 | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
 }
 
-void combinationAnalysis() {
+void combinationAnalysis() { // Creating a "combinationAnalysis()" function to show a loading message
     sleep(1);
 
     printf("\n Analisando combinação...");
@@ -46,31 +47,35 @@ void combinationAnalysis() {
     sleep(1);
 }
 
-void successfulOpening() {
-    printf("\n Muito bem! Parece que você me conhece bem...");
-    printf("\n A combinação que você encontrou ao final das movimentações satisfaz minha fechadura!");
+void successfulOpening() { // Creating a "successfulOpening()" function to show a success message when the safe is open
+    printf("\n Muito bem! Parece que você me conhece bem e conseguiu abrir o cofre com sucesso...");
+    printf("\n A combinação que você descobriu/encontrou ao final dos deslizamentos é a chave correta para me desbloquear!");
 
     sleep(1);
-    printf("\n\n Já que, agora, estou aberto, você pode pegar seus pertences :)\n");
+    printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)\n");
+    printf("\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
+    printf("\n\n Obrigado por utilizar meu serviço! Tenha um ótimo dia.\n");
 }
 
-void unsuccessfulOpening() {
-    printf("\n Infelizmente suas tentativa de abertura do cofre se esgotaram!");
-    printf("\n Me parece que este cofre não te pertence, por esse motivo, não será possível lhe entregar seus pertences :(\n\n");
+void unsuccessfulOpening() { // Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed
+    printf("\n Que pena! Suas tentativa de abertura do cofre se esgotaram :(");
+    printf("\n Parece que você não conseguiu encontrar a combinação correta para me abrir...");
+
+    printf("\n\n Infelizmente, não poderei lhe entregar seus pertences neste momento.");
+
+    printf("\n\n Agradeço suas tentativas e lamentamo por qualquer incoveniente causado. Tenha um ótimo dia.\n");
 }
 
-void exit(int status);
-
-int main() {
+int main() { // Creating the "main" structure of the code/project
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, return_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int trys = 0, k, i, movements, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
     int C1 = 0, C2 = 0, C5 = 0, C7 = 0, C8 = 0; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
 
-    introMessage();
+    introMessage(); // Calling function "introMessage()" to show the introduction message in the beginning
 
     sleep(1);
     printf("\n Pressione qualquer tecla para continuar (...)");
@@ -84,16 +89,18 @@ int main() {
         C7 = 0;
         C8 = 0;
 
+        initial_position = 10;
+
         sleep(1);
 
         printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
-        printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para a processo de abertura.");
-        printf("\n\n º Observação: é importante ressaltar que você realizar pelo menos 1 deslizamentos e, no máximo, 4 deslizamentos totais.\n");
+        printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
+        printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.\n");
 
         sleep(1);
 
         do {
-            printf("\n Informe a quantidade de deslizamentos a serem realizados: ");
+            printf("\n º Informe a quantidade de deslizamentos a serem realizados: ");
             scanf("%d", &movements);
 
             if(movements <= 0) {
@@ -138,13 +145,16 @@ int main() {
             printf("\n º Informe o limite (posição) para o \"%dº\" deslocamento: ", k+1);
             scanf("%d", &position_to);
 
-                if(position_to < 0) {
+            if(position_to < 0) {
                 printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!\n");
 
-                // sleep(1);
+                sleep(1);
 
-                // exit(0);
+                exit(0);
 
+                // TODO: Adicionar um "switch" para possibilitar que o usuário retorne ao menu principal ou encerre o processo de abertura ao informar um número negativo.
+
+                /*
                 sleep(3);
 
                 system("cls");
@@ -194,6 +204,7 @@ int main() {
                         printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
                 }
                 break;
+                */
             }
 
             if(position_to > initial_position) {
@@ -239,39 +250,37 @@ int main() {
             }
         }
 
-        while(return_option != 1) {
-            sleep(1);
+        sleep(1);
 
-            printf("\n Perfeito! Agora, ao término de todos os movimentos estipulados anteriormente, já temos a combinação formada.");
+        printf("\n Perfeito! Agora, ao término de todos os movimentos estipulados anteriormente, já temos a combinação formada.");
 
-            sleep(3);
+        sleep(3);
+        system("cls");
+
+        printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
+
+        // C1 = 5 | C2 = 12 | C5 = 3 | C7 = 7 | C8 = 6
+
+        // if(password == 512376) {
+        if((C1 == 5) && (C2 == 12) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
+            combinationAnalysis();
+
             system("cls");
 
-            printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
+            successfulOpening();
 
-            // C1 = 5 | C2 = 12 | C5 = 3 | C7 = 7 | C8 = 6
+            exit(0);
+        } else {
+            trys++;
 
-            // if(password == 512376) {
-            if((C1 == 5) && (C2 == 12) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
-                combinationAnalysis();
+            combinationAnalysis();
 
-                system("cls");
+            printf("\n\n Hmmm... me parece que a senha inserida ao término dos deslizamentos está incorreta!");
+            printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
 
-                successfulOpening();
-
-                exit(0);
-            } else {
-                trys++;
-
-                combinationAnalysis();
-
-                printf("\n\n Hmmm... me parece que a senha inserida após os deslizamentos está incorreta!");
-                printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
-
-                sleep(1);
-                system("pause");
-                system("cls");
-            }
+            sleep(1);
+            system("pause");
+            system("cls");
         }
     } while(trys < 3);
 
