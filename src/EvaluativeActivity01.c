@@ -71,7 +71,7 @@ int main() { // Creating the "main" structure of the code/project
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
     int trys = 0, k, i, movements, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
-    int C1 = 0, C2 = 0, C5 = 0, C7 = 0, C8 = 0; // Creating five variables that are going to be used as counters
+    int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
 
@@ -83,7 +83,7 @@ int main() { // Creating the "main" structure of the code/project
     system("cls");
 
     do {
-        C1 = 0;
+        C1 = 1;
         C2 = 0;
         C5 = 0;
         C7 = 0;
@@ -91,13 +91,13 @@ int main() { // Creating the "main" structure of the code/project
 
         initial_position = 10;
 
-        sleep(1);
+        // sleep(1);
 
-        printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
-        printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
-        printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.\n");
+        // printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
+        // printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
+        // printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.\n");
 
-        sleep(1);
+        // sleep(1);
 
         do {
             printf("\n º Informe a quantidade de deslizamentos a serem realizados: ");
@@ -208,7 +208,7 @@ int main() { // Creating the "main" structure of the code/project
             }
 
             if(position_to > initial_position) {
-                for(i = initial_position; i <= position_to; i++) {
+                for(i = initial_position; i < position_to; i++) {
                     // initial_position = position_to + 1;
 
                     // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
@@ -226,9 +226,9 @@ int main() { // Creating the "main" structure of the code/project
                     }
                 }
 
-                initial_position = position_to + 1;
+                initial_position = position_to;
             } else {
-                for(i = initial_position; i >= position_to; i--) {
+                for(i = initial_position; i > position_to; i--) {
                     // initial_position = position_to + 1;
 
                     // printf("\n safe_bar[%d] = %d", i, safe_bar[i]);
@@ -246,7 +246,7 @@ int main() { // Creating the "main" structure of the code/project
                     }
                 }
 
-                initial_position = position_to + 1;
+                initial_position = position_to;
             }
         }
 
@@ -259,16 +259,20 @@ int main() { // Creating the "main" structure of the code/project
 
         printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
 
-        // C1 = 5 | C2 = 12 | C5 = 3 | C7 = 7 | C8 = 6
+        // C1 = 5 | C2 = 11 | C5 = 3 | C7 = 7 | C8 = 6
 
         // if(password == 512376) {
-        if((C1 == 5) && (C2 == 12) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
+        if((C1 == 5) && (C2 == 11) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
             combinationAnalysis();
 
             system("cls");
 
             successfulOpening();
 
+            sleep(2);
+            system("pause");
+
+            sleep(1);
             exit(0);
         } else {
             trys++;
