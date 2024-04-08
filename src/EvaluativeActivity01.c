@@ -54,23 +54,23 @@ void successfulOpening() { // Creating a "successfulOpening()" function to show 
     sleep(1);
     printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)\n");
     printf("\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
-    printf("\n\n Obrigado por utilizar meu serviço! Tenha um ótimo dia.\n\n");
+    printf("\n\n Obrigado por utilizar meu serviço!\n");
 }
 
 void unsuccessfulOpening() { // Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed
-    printf("\n Que pena! Suas tentativa de abertura do cofre se esgotaram :(");
+    printf("\n Que pena! Suas tentativas de abertura do cofre se esgotaram :(");
     printf("\n Parece que você não conseguiu encontrar a combinação correta para me abrir...");
 
     printf("\n\n Infelizmente, não poderei lhe entregar seus pertences neste momento.");
 
-    printf("\n\n Agradeço suas tentativas e lamentamo por qualquer incoveniente causado. Tenha um ótimo dia.\n");
+    printf("\n\n Agradeço suas tentativas e lamento por qualquer incoveniente causado. Tenha um ótimo dia.\n");
 }
 
 int main() { // Creating the "main" structure of the code/project
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, return_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int trys = 0, k, i, movements, return_option, closure_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
     int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
@@ -261,11 +261,74 @@ int main() { // Creating the "main" structure of the code/project
 
             successfulOpening();
 
-            sleep(2);
+            // sleep(2);
+            // system("pause");
+
+            // sleep(1);
+            // exit(0);
+
+            printf("\n --------------------------------------/--------------------------------------\n\n");
+            sleep(1);
             system("pause");
+            system("cls");
 
             sleep(1);
-            exit(0);
+
+            printf("\n --------------------------------------/--------------------------------------\n");
+
+            printf("\n Agora, com o cofre aberto, é possível fechá-lo novamente ou encerrar o processo de abertura.");
+            printf("\n Abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.");
+            printf("\n º Digite \"1\" caso você queira fechar o cofre e retornar ao painel inicial.");
+            printf("\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.");
+
+            printf("\n\n Opção: ");
+            scanf("%d", &closure_option);
+
+            printf("\n --------------------------------------/--------------------------------------\n");
+
+            switch(closure_option) {
+                case 1:
+                    printf("\n Fechando o cofre e redirecionando-lhe ao painel inicial de abertura do cofre...");
+
+                    sleep(1);
+                    printf("\n\n 3,");
+
+                    sleep(1);
+                    printf("    2,");
+
+                    sleep(1);
+                    printf("    1");
+
+                    sleep(1);
+                    system("cls");
+
+                    sleep(1);
+                    introMessage();
+
+                    sleep(1);
+                    system("pause");
+                    system("cls");
+
+                    break;
+
+                case 2:
+                    printf("\n Encerrando o processo de abertura do cofre de maneira definitiva...");
+
+                    sleep(1);
+                    printf("\n\n 3,");
+
+                    sleep(1);
+                    printf("    2,");
+
+                    sleep(1);
+                    printf("    1\n");
+
+                    sleep(1);
+
+                    exit(0);
+                default:
+                    printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
+            }
         } else {
             trys++;
 
