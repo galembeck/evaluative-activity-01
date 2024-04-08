@@ -70,7 +70,7 @@ int main() { // Creating the "main" structure of the code/project
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, return_option = 0, closure_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int trys = 0, k, i, movements, return_option, closure_option, initial_position, position_to; // Creating new variables to be used during the development of the code/project
     int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
@@ -185,6 +185,7 @@ int main() { // Creating the "main" structure of the code/project
                         system("cls");
 
                         return_option = 0;
+
                         break;
 
                     case 2:
@@ -205,7 +206,6 @@ int main() { // Creating the "main" structure of the code/project
                     default:
                         printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
                 }
-                break;
                 */
             }
 
