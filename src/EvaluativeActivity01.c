@@ -23,7 +23,7 @@ void introMessage() { // Creating a "introMessage()" function to show the introd
 
     printf("\n\n O número 7, na posição 10, marca o início dos movimentos.\n A partir deste ponto, você moverá os limites para revelar a combinação correta.");
 
-    printf("\n\n Agora, com todas as instruções, podemos começar!\n");
+    printf("\n\n Agora, com todas as instruções, podemos começar!\n\n");
 }
 
 void safeBarShowcase() { // Creating a "safeBarShowcase()" to show the bar when necessary
@@ -70,7 +70,7 @@ int main() { // Creating the "main" structure of the code/project
     setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
 
     int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-    int trys = 0, k, i, movements, return_option, closure_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
+    int trys = 0, k, i, movements, return_option = 0, closure_option, initial_position = 10, position_to; // Creating new variables to be used during the development of the code/project
     int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
     // int initial_position = 10, position_to = 0, password;
     // int movements; // Incluir uma forma de perguntar ao usuário quantos movimentos/deslocamentos ele deseja realizar (no máximo 4)
@@ -78,7 +78,7 @@ int main() { // Creating the "main" structure of the code/project
     introMessage(); // Calling function "introMessage()" to show the introduction message in the beginning
 
     sleep(1);
-    printf("\n Pressione qualquer tecla para continuar (...)");
+    printf(" Pressione qualquer tecla para continuar (...)");
     getchar();
     system("cls");
 
@@ -183,6 +183,8 @@ int main() { // Creating the "main" structure of the code/project
                         sleep(1);
 
                         system("cls");
+
+                        return_option = 0;
                         break;
 
                     case 2:
@@ -279,7 +281,7 @@ int main() { // Creating the "main" structure of the code/project
             printf("\n Agora, com o cofre aberto, é possível fechá-lo novamente ou encerrar o processo de abertura.");
             printf("\n Abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.");
             printf("\n º Digite \"1\" caso você queira fechar o cofre e retornar ao painel inicial.");
-            printf("\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.");
+            printf("\n º Digite \"2\" caso você queira fechar o cofre e encerrar o processo de abertura definitivamente.");
 
             printf("\n\n Opção: ");
             scanf("%d", &closure_option);
@@ -301,6 +303,8 @@ int main() { // Creating the "main" structure of the code/project
 
                     sleep(1);
                     system("cls");
+
+                    trys = 0;
 
                     sleep(1);
                     introMessage();
