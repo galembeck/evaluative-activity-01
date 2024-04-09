@@ -3,7 +3,7 @@
 
 #include <unistd.h> // Including/importing the <unistd.h> library - using "sleep() in code"
 
-#include <locale.h>
+#include <locale.h> // Including/importing the <locale.h> (Language/Localization) library
 
 #define length 25 // Defining the maximum length of the vector ("safe_bar") to 25 positions (0 - 24)
 
@@ -26,9 +26,9 @@ void introMessage() { // Creating a "introMessage()" function to show the introd
     printf("\n\n Agora, com todas as instruções, podemos começar!\n\n");
 }
 
-void safeBarShowcase() { // Creating a "safeBarShowcase()" to show the bar when necessary
-    printf("\n | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | 7 | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
-}
+// void safeBarShowcase() { // Creating a "safeBarShowcase()" to show the bar when necessary
+//    printf("\n | 1 | 5 | 7 | 8 | 2 | 2 | 7 | 8 | 2 | 5 | 7 | 8 | 2 | 1 | 5 | 2 | 7 | 8 | 2 | 1 | 1 | 2 | 7 | 8 | 2 |");
+// }
 
 void combinationAnalysis() { // Creating a "combinationAnalysis()" function to show a loading message
     sleep(1);
@@ -78,8 +78,7 @@ int main() { // Creating the "main" structure of the code/project
     introMessage(); // Calling function "introMessage()" to show the introduction message in the beginning
 
     sleep(1);
-    printf(" Pressione qualquer tecla para continuar (...)");
-    getchar();
+    system("pause");
     system("cls");
 
     do {
@@ -118,7 +117,7 @@ int main() { // Creating the "main" structure of the code/project
 
         sleep(1);
 
-        safeBarShowcase();
+        // safeBarShowcase();
 
         printf("\n\n Tudo pronto! Agora, com a informação do número de deslizamentos para o processo de abertura, podemos prosseguir.");
         printf("\n Nessa etapa, será necessário informar as posições desejadas para o deslocamento do limite.\n");
@@ -210,7 +209,7 @@ int main() { // Creating the "main" structure of the code/project
             }
 
             if (position_to > initial_position) {
-                for (i = initial_position + 1; i <= position_to; i++) {
+                  for (i = initial_position + 1; i <= position_to; i++) {
                     if (safe_bar[i] == 1) {
                         C1++;
                     } else if (safe_bar[i] == 2) {
@@ -250,8 +249,6 @@ int main() { // Creating the "main" structure of the code/project
 
         sleep(3);
         system("cls");
-
-        printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
 
         // C1 = 5 | C2 = 11 | C5 = 3 | C7 = 7 | C8 = 6
 
@@ -337,6 +334,8 @@ int main() { // Creating the "main" structure of the code/project
             trys++;
 
             combinationAnalysis();
+
+            printf("\n\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
 
             printf("\n\n Hmmm... me parece que a senha inserida ao término dos deslizamentos está incorreta!");
             printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
