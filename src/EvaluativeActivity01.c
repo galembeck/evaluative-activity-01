@@ -3,7 +3,7 @@
 
 #include <unistd.h> // Including/importing the <unistd.h> library - using "sleep() in code"
 
-#include <locale.h> // Including/importing the <locale.h> (Language/Localization) library
+#include <locale.h>
 
 #define length 25 // Defining the maximum length of the vector ("safe_bar") to 25 positions (0 - 24)
 
