@@ -101,7 +101,7 @@ int main()
     
         fflush(stdout);
         sleep(1);
-        printf("\n\n Pressione qualquer tecla para continuar (...)");
+        printf("\n\n Pressione Enter para continuar (...)");
         fflush(stdin);
         getchar();
         printf("\e[1;1H\e[2J");
@@ -154,7 +154,7 @@ int main()
     
             fflush(stdout);
             sleep(2);
-            printf("\n\n Pressione qualquer tecla para continuar (...)");
+            printf("\n\n Pressione Enter para continuar (...)");
             fflush(stdin);
             getchar();
             printf("\e[1;1H\e[2J");
@@ -341,7 +341,7 @@ int main()
                 printf("\n --------------------------------------/--------------------------------------");
                 fflush(stdout);
                 sleep(1);
-                printf("\n\n Pressione qualquer tecla para continuar (...)");
+                printf("\n\n Pressione Enter para continuar (...)");
                 fflush(stdin);
                 getchar();
                 printf("\e[1;1H\e[2J");
@@ -391,7 +391,7 @@ int main()
         
                             fflush(stdout);
                             sleep(1);
-                            printf("\n\n Pressione qualquer tecla para continuar (...)");
+                            printf("\n\n Pressione Enter para continuar (...)");
                             fflush(stdin);
                             getchar();
                             printf("\e[1;1H\e[2J");
@@ -437,7 +437,7 @@ int main()
                 
                 fflush(stdout);
                 sleep(1);
-                printf("\n\n Pressione qualquer tecla para continuar (...)");
+                printf("\n\n Pressione Enter para continuar (...)");
                 fflush(stdin);
                 getchar();
                 
