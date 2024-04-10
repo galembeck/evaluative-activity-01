@@ -70,7 +70,7 @@ void successfulOpening()
         sleep(1);
         printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)");
         printf("\n\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
-        printf("\n\n Obrigado por utilizar meu serviço!");
+        printf("\n\n Obrigado por utilizar meu serviço!\n");
     }
 
 void unsuccessfulOpening() 
@@ -153,6 +153,8 @@ int main()
     
             printf("\n\n Tudo pronto! Agora, com a informação do número de deslizamentos para o processo de abertura, podemos prosseguir.");
             printf("\n Nessa etapa, será necessário informar as posições desejadas para o deslocamento do limite.");
+            
+            int flag = 1;
     
             for(k = 0; k < movements; k++) 
                 {
@@ -166,9 +168,70 @@ int main()
                             printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!");
             
                             fflush(stdout);
-                            sleep(1);
+                            sleep(3);
             
-                            exit(0);
+                            printf("\e[1;1H\e[2J");
+                            
+                            printf("\n Ainda é possível retornar ao painel inicial de abertura do cofre...\n\n Para isso, abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.\n º Digite \"1\" caso você queira retornar ao painel de deslizamentos.\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.\n\n Opção: ");
+                            scanf("%d", &return_option);
+                            
+                            switch(return_option)
+                            {
+                            //==============================================================================================================================================
+                                case 1:
+                                    
+                                    printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel de deslizamentos.");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\n\n 3,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\t\t2,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\t\t1,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\e[1;1H\e[2J");
+                                    
+                                    flag = 0;
+                                    
+                                    break;
+                                
+                                case 2:
+                                    
+                                    printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\n\n 3,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\t\t2,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    printf("\t\t1,");
+                                    
+                                    fflush(stdout);
+                                    sleep(1);
+                                    
+                                    exit(0);
+                                    
+                                default:
+                                    
+                                    printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
+                                    
+                            //==============================================================================================================================================
+                            }
+                            
+                            break;
+                            
                     //======================================================================================================================================================
                         }
     
@@ -238,6 +301,10 @@ int main()
 
 //==========================================================================================================================================================================
             }
+        
+        if (flag)
+        {
+        //==================================================================================================================================================================
     
             fflush(stdout);
             sleep(1);
@@ -253,7 +320,7 @@ int main()
             // if(password == 512376) {
             if((C1 == 5) && (C2 == 11) && (C5 == 3) && (C7 == 7) && (C8 == 6))
             {
-//==========================================================================================================================================================================
+            //==============================================================================================================================================================
                 combinationAnalysis();
     
                 printf("\e[1;1H\e[2J");
@@ -342,11 +409,11 @@ int main()
                             printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
                     }
 
-//==========================================================================================================================================================================
+            //==============================================================================================================================================================
             } 
             else
             {
-//==========================================================================================================================================================================
+            //==============================================================================================================================================================
                 trys++;
     
                 combinationAnalysis();
@@ -362,8 +429,11 @@ int main()
                 getchar();
                 
                 printf("\e[1;1H\e[2J");
-//==========================================================================================================================================================================
+            //==============================================================================================================================================================
             }
+            
+        //==================================================================================================================================================================
+        }
         
 //==========================================================================================================================================================================
         } while(trys < 3);
