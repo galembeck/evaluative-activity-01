@@ -1,84 +1,123 @@
-#include <stdio.h> // Including/importing the <stdio.h> (Standard Input Output) library
+#include <stdio.h> // Including/importing the <stdio.h> (Standard Input Output) library;
 
-#include <stdlib.h> // Including/importing the <stdlib.h> (Standard System) library
+#include <stdlib.h> // Including/importing the <stdlib.h> (Standard System) library;
 
-#include <unistd.h> // Including/importing the <unistd.h> library - using "sleep() in code"
+#include <unistd.h> // Including/importing the <unistd.h> library - used in time functions, such as "sleep()" in code;
 
-#include <locale.h> // Including/importing the <locale.h> (Language/Localization) library
+#include <locale.h> // Including/importing the <locale.h> (Language/Localization) library;
 
-#define length 25 // Defining the maximum length of the vector ("safe_bar") to 25 positions (0 - 24)
+#define length 25 // Defining the maximum length of the vector ("safe_bar") to 25 positions (0 -> 24);
+
+//==========================================================================================================================================================================
+//============================================================================Functions=====================================================================================
+//==========================================================================================================================================================================
 
 void introMessage() 
-    { 
-        // Creating a "introMessage()" function to show the introduction message
+
+    //=Creating a "introMessage()" function to show the introduction message================================================================================================
+    {
+        printf("    _______________________________________________________________\n");
+        printf("   /                                                               \\\n");
+        printf("  /     _______________________________________________________     \\\n");
+        printf(" /     /                                                       \\     \\\n");
+        printf("|     |       ___________________________________________       |     |\n");
+        printf("|     |      /                                           \\      |     |\n");
+        printf("|     |     /                                             \\     |     |\n");
+        printf("|     |    |                                               |    |     |\n");
+        printf("|     |    |             _____________________             |    |     |\n");
+        printf("|     |    |            /                     \\            |    |     |\n");
+        printf("|     |    |           /                       \\           |    |     |\n");
+        printf("|     |    |          |         _______         |          |    |     |\n");
+        printf("|     |    |          |        |       |        |          |    |     |\n");
+        printf("|     |    |          |        |   O   |        |          |    |     |\n");
+        printf("|     |    |          |        |_______|        |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
+        printf("|     |    |          |                         |          |    |     |\n");
+        printf("|     |    |          |_________________________|          |    |     |\n");
+        printf("|     |    |               ___  ___  ___  ___              |    |     |\n");
+        printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
+        printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
+        printf("|     |    |              |___||___||___||___|             |    |     |\n");
+        printf("|     |    |                                               |    |     |\n");
+        printf("|     |    |                                               |    |     |\n");
+        printf("|     |    |                                               |    |     |\n");
+        printf("|     |    |_______________________________________________|    |     |\n");
+        printf("|     |                                                         |     |\n");
+        printf("|     |_________________________________________________________|     |\n");
+        printf("|_____________________________________________________________________|\n");
         
-        printf("\n Olá! Eu sou um cofre virtual...");
-        printf("\n Eu represento uma simulação digital de um mecanismo de segurança.");
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(2); //Code waits defined time to proceed;
+        printf("\n Olá! Eu sou um cofre virtual..."); // Introduction for the user - The code says it's a safe;
+        printf("\n Eu represento uma simulação digital de um mecanismo de segurança."); // - The code says it's a digital simulation for a security mechanism;
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         
         printf("\n\n Acho que para descobrir se eu te pertenço, será necessário acertar a senha/combinação, para que eu possa abrir e te entregar seus pertences :)");
-        fflush(stdout);
-        sleep(1);
+                                                                                                // - The code says it has a combination needed for it to unlock itself
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         
-        fflush(stdout);
-        sleep(2);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(2); //Code waits defined time to proceed;
         printf("\n\n Aqui está o funcionamento:");
-        fflush(stdout);
-        sleep(2);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(2); //Code waits defined time to proceed;
         printf("\n\n\t Possuo uma barra de 25 posições, começando na posição 10, que pode ser movida até 4 vezes.");
         
         printf("\n\t Durante cada movimento, os números entre os novos limites estabelecidos serão contados.");
         
-        fflush(stdout);
-        sleep(2);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(2); //Code waits defined time to proceed;
         printf("\n\n Agora, com todas as instruções, podemos começar!");
     }
-
+    //======================================================================================================================================================================
+    
 void combinationAnalysis() 
-    { 
-        // Creating a "combinationAnalysis()" function to show a loading message
-        
-        fflush(stdout);
-        sleep(1);
+
+    //=Creating a "combinationAnalysis()" function to show a loading message================================================================================================
+    {
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
     
         printf("\n Analisando combinação...");
     
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         printf("\n\n .");
     
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         printf("    .");
     
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         printf("    .");
     
-        fflush(stdout);
-        sleep(1);
-        printf("\e[1;1H\e[2J");
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
+        printf("\e[1;1H\e[2J"); //Cleans screen;
     }
+    //======================================================================================================================================================================
+    
+void successfulOpening()
 
-void successfulOpening() 
-    { 
-        // Creating a "successfulOpening()" function to show a success message when the safe is open
-        
+    //=Creating a "successfulOpening()" function to show a success message when the safe is open
+    {
         printf("\n Muito bem! Parece que você me conhece bem e conseguiu abrir o cofre com sucesso...");
         printf("\n A combinação que você descobriu/encontrou ao final dos deslizamentos é a chave correta para me desbloquear!");
     
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)");
         printf("\n\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
         printf("\n\n Obrigado por utilizar meu serviço!\n");
     }
-
+    //======================================================================================================================================================================
+    
 void unsuccessfulOpening() 
-    { 
-        // Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed
-        
+
+    //=Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed======================================================================
+    {
         printf("\n Que pena! Suas tentativas de abertura do cofre se esgotaram :(");
         printf("\n Parece que você não conseguiu encontrar a combinação correta para me abrir...");
     
@@ -86,11 +125,16 @@ void unsuccessfulOpening()
     
         printf("\n\n Agradeço suas tentativas e lamento por qualquer incoveniente causado. Tenha um ótimo dia.");
     }
+    //======================================================================================================================================================================
 
-int main() 
-    { 
-        // Creating the "main" structure of the code/project
-        
+//==========================================================================================================================================================================
+//============================================================================Main Code=====================================================================================
+//==========================================================================================================================================================================
+
+int main()
+
+    //=Creating the "main" structure of the code/project====================================================================================================================
+    {
         setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
     
         int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
@@ -99,12 +143,15 @@ int main()
     
         introMessage(); // Calling function "introMessage()" to show the introduction message in the beginning
     
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
+        
+        /*=======Substitute for "system("pause")"=========*/
         printf("\n\n Pressione Enter para continuar (...)");
-        fflush(stdin);
-        getchar();
-        printf("\e[1;1H\e[2J");
+        fflush(stdin); // Cleans the input buffer;
+        getchar(); // Waits for the user to press Enter;
+        printf("\e[1;1H\e[2J"); //Cleans screen;
+        /*================================================*/
     
         do 
         {
@@ -118,22 +165,22 @@ int main()
     
             initial_position = 10;
             
-            fflush(stdout);
-            sleep(1); 
+            fflush(stdout); //Cleans the output buffer;
+            sleep(1); //Code waits defined time to proceed;
             printf("\n Primeiramente, preciso saber quantos deslizamentos/movimentos você deseja realizar.");
             
-            fflush(stdout);
-            sleep(1);
+            fflush(stdout); //Cleans the output buffer;
+            sleep(1); //Code waits defined time to proceed;
             printf("\n Para isso, me informe, a seguir, a quantidade de deslizamentos desejada por você para o processo de abertura.");
             
-            fflush(stdout);
-            sleep(1);
+            fflush(stdout); //Cleans the output buffer;
+            sleep(1); //Code waits defined time to proceed;
             printf("\n\n Observação: você deve realizar pelo menos 1 deslizamento e, no máximo, 4 deslizamentos totais.");
             
-            fflush(stdout);
-            sleep(2);
+            fflush(stdout); //Cleans the output buffer;
+            sleep(2); //Code waits defined time to proceed;
         
-            do 
+            do
             {
             //==============================================================================================================================================================
                 printf("\n\n º Informe a quantidade de deslizamentos a serem realizados: ");
@@ -152,15 +199,18 @@ int main()
     
             printf("\n Ótimo! Agora com o número de movimentos a serem realizados definido, podemos continuar para a abertura do cofre.");
     
-            fflush(stdout);
-            sleep(2);
+            fflush(stdout); //Cleans the output buffer;
+            sleep(2); //Code waits defined time to proceed;
+            
+            /*=======Substitute for "system("pause")"=========*/
             printf("\n\n Pressione Enter para continuar (...)");
-            fflush(stdin);
-            getchar();
-            printf("\e[1;1H\e[2J");
-    
-            fflush(stdout);
-            sleep(1);
+            fflush(stdin); // Cleans the input buffer;
+            getchar(); // Waits for the user to press Enter;
+            printf("\e[1;1H\e[2J"); //Cleans screen;
+            /*================================================*/
+            
+            fflush(stdout); //Cleans the output buffer;
+            sleep(1); //Code waits defined time to proceed;
     
             printf("\n\n Tudo pronto! Agora, com a informação do número de deslizamentos para o processo de abertura, podemos prosseguir.");
             printf("\n Nessa etapa, será necessário informar as posições desejadas para o deslocamento do limite.");
@@ -178,10 +228,10 @@ int main()
                         //==================================================================================================================================================
                             printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!");
             
-                            fflush(stdout);
-                            sleep(3);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(3); //Code waits defined time to proceed;
             
-                            printf("\e[1;1H\e[2J");
+                            printf("\e[1;1H\e[2J"); //Cleans screen;
                             
                             printf("\n Ainda é possível retornar ao painel inicial de abertura do cofre...\n\n Para isso, abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.\n º Digite \"1\" caso você queira retornar ao painel de deslizamentos.\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.\n\n Opção: ");
                             scanf("%d", &return_option);
@@ -193,21 +243,21 @@ int main()
                                     
                                     printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel de deslizamentos.");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\n\n 3,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\t\t2,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\t\t1,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
-                                    printf("\e[1;1H\e[2J");
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
+                                    printf("\e[1;1H\e[2J"); //Cleans screen;
                                     
                                     flag = 0;
                                     
@@ -217,20 +267,20 @@ int main()
                                     
                                     printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\n\n 3,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\t\t2,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     printf("\t\t1,");
                                     
-                                    fflush(stdout);
-                                    sleep(1);
+                                    fflush(stdout); //Cleans the output buffer;
+                                    sleep(1); //Code waits defined time to proceed;
                                     
                                     exit(0);
                                     
@@ -317,37 +367,40 @@ int main()
         {
         //==================================================================================================================================================================
     
-            fflush(stdout);
-            sleep(1);
+            fflush(stdout); //Cleans the output buffer;
+            sleep(1); //Code waits defined time to proceed;
     
             printf("\n Perfeito! Agora, ao término dos movimentos estipulados anteriormente, já temos a combinação formada.");
     
-            fflush(stdout);
-            sleep(3);
-            printf("\e[1;1H\e[2J");
+            fflush(stdout); //Cleans the output buffer;
+            sleep(3); //Code waits defined time to proceed;
+            printf("\e[1;1H\e[2J"); //Cleans screen;
     
             // C1 = 5 | C2 = 11 | C5 = 3 | C7 = 7 | C8 = 6
     
-            // if(password == 512376) {
+            // if(password == 512376) 
             if((C1 == 5) && (C2 == 11) && (C5 == 3) && (C7 == 7) && (C8 == 6))
             {
             //==============================================================================================================================================================
                 combinationAnalysis();
     
-                printf("\e[1;1H\e[2J");
+                printf("\e[1;1H\e[2J"); //Cleans screen;
     
                 successfulOpening();
     
                 printf("\n --------------------------------------/--------------------------------------");
-                fflush(stdout);
-                sleep(1);
+                fflush(stdout); //Cleans the output buffer;
+                sleep(1); //Code waits defined time to proceed;
+                
+                /*=======Substitute for "system("pause")"=========*/
                 printf("\n\n Pressione Enter para continuar (...)");
-                fflush(stdin);
-                getchar();
-                printf("\e[1;1H\e[2J");
-    
-                fflush(stdout);
-                sleep(1);
+                fflush(stdin); // Cleans the input buffer;
+                getchar(); // Waits for the user to press Enter;
+                printf("\e[1;1H\e[2J"); //Cleans screen;
+                /*================================================*/
+                
+                fflush(stdout); //Cleans the output buffer;
+                sleep(1); //Code waits defined time to proceed;
     
                 printf("\n --------------------------------------/--------------------------------------\n");
     
@@ -367,58 +420,64 @@ int main()
                         case 1:
                             printf("\n Fechando o cofre e redirecionando-lhe ao painel inicial de abertura do cofre...");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("\n\n 3,");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("    2,");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("    1");
         
-                            fflush(stdout);
-                            sleep(1);
-                            printf("\e[1;1H\e[2J");
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
+                            printf("\e[1;1H\e[2J"); //Cleans screen;
         
                             trys = 0;
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             introMessage();
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
+                            
+                            /*=======Substitute for "system("pause")"=========*/
                             printf("\n\n Pressione Enter para continuar (...)");
-                            fflush(stdin);
-                            getchar();
-                            printf("\e[1;1H\e[2J");
-        
+                            fflush(stdin); // Cleans the input buffer;
+                            getchar(); // Waits for the user to press Enter;
+                            printf("\e[1;1H\e[2J"); //Cleans screen;
+                            /*================================================*/
+                            
                             break;
         
                         case 2:
                             printf("\n Encerrando o processo de abertura do cofre de maneira definitiva...");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("\n\n 3,");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("    2,");
         
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
                             printf("    1\n");
                             
-                            fflush(stdout);
-                            sleep(1);
+                            fflush(stdout); //Cleans the output buffer;
+                            sleep(1); //Code waits defined time to proceed;
         
                             exit(0);
                         default:
-                            printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
+                            
+                            printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima."); /* If none of the options typed is valid, this is the 
+                                                                                                                        default option, warning the user; */
+                                                                                                                    
                     //======================================================================================================================================================
                     }
 
@@ -431,17 +490,22 @@ int main()
     
                 combinationAnalysis();
                 
-                printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
-                printf("\n\n Hmmm... me parece que a senha inserida ao término dos deslizamentos está incorreta!");
-                printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.", 3-trys);
+                printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8); // Shows combination, as the user got it wrong;
+                fflush(stdout); //Cleans the output buffer;
+                sleep(2); //Code waits defined time to proceed;
+                printf("\n\n Hmmm... me parece que a senha inserida ao término dos deslizamentos está incorreta!"); // Tells the user it is not correct;
+                printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.", 3-trys); // Shows how many tries the user still has;
                 
-                fflush(stdout);
-                sleep(1);
+                fflush(stdout); //Cleans the output buffer;
+                sleep(1); //Code waits defined time to proceed;
+                
+                /*=======Substitute for "system("pause")"=========*/
                 printf("\n\n Pressione Enter para continuar (...)");
-                fflush(stdin);
-                getchar();
+                fflush(stdin); // Cleans the input buffer;
+                getchar(); // Waits for the user to press Enter;
+                printf("\e[1;1H\e[2J"); //Cleans screen;
+                /*================================================*/
                 
-                printf("\e[1;1H\e[2J");
             //==============================================================================================================================================================
             }
             
@@ -449,12 +513,13 @@ int main()
         }
         
         //==================================================================================================================================================================
-        } while(trys < 3);
+        } while(trys < 3); // When the user can't open the safe within 3 tries, "unsuccessfulOpening" function is brought to action and the code ends;
     
-        unsuccessfulOpening();
+        unsuccessfulOpening(); // Brings "unsuccessfulOpening" function into action;
         
-        fflush(stdout);
-        sleep(1);
+        fflush(stdout); //Cleans the output buffer;
+        sleep(1); //Code waits defined time to proceed;
         
         return 0;
+//==========================================================================================================================================================================
 }
