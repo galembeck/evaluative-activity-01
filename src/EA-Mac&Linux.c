@@ -16,34 +16,34 @@ void introMessage()
 
     //=Creating a "introMessage()" function to show the introduction message================================================================================================
     {
-        printf("    _______________________________________________________________\n");
-        printf("   /                                                               \\\n");
-        printf("  /     _______________________________________________________     \\\n");
-        printf(" /     /                                                       \\     \\\n");
-        printf("|     |       ___________________________________________       |     |\n");
-        printf("|     |      /                                           \\      |     |\n");
-        printf("|     |     /                                             \\     |     |\n");
-        printf("|     |    |                                               |    |     |\n");
-        printf("|     |    |             _____________________             |    |     |\n");
-        printf("|     |    |            /                     \\            |    |     |\n");
-        printf("|     |    |           /                       \\           |    |     |\n");
-        printf("|     |    |          |         _______         |          |    |     |\n");
-        printf("|     |    |          |        |       |        |          |    |     |\n");
-        printf("|     |    |          |        |   O   |        |          |    |     |\n");
-        printf("|     |    |          |        |_______|        |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
-        printf("|     |    |          |                         |          |    |     |\n");
-        printf("|     |    |          |_________________________|          |    |     |\n");
-        printf("|     |    |               ___  ___  ___  ___              |    |     |\n");
-        printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
-        printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
-        printf("|     |    |              |___||___||___||___|             |    |     |\n");
-        printf("|     |    |                                               |    |     |\n");
-        printf("|     |    |                                               |    |     |\n");
-        printf("|     |    |                                               |    |     |\n");
-        printf("|     |    |_______________________________________________|    |     |\n");
-        printf("|     |                                                         |     |\n");
-        printf("|     |_________________________________________________________|     |\n");
-        printf("|_____________________________________________________________________|\n");
+        printf("    ________________________________________________________________\n");
+        printf("   /                                                                \\\n");
+        printf("  /     ________________________________________________________     \\\n");
+        printf(" /     /                                                        \\     \\\n");
+        printf("|     |       ____________________________________________       |     |\n");
+        printf("|     |      /                                            \\      |     |\n");
+        printf("|     |     /                                              \\     |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |            ________________________            |    |     |\n");
+        printf("|     |    |           /                        \\           |    |     |\n");
+        printf("|     |    |          /                          \\          |    |     |\n");
+        printf("|     |    |          |       ____________       |          |    |     |\n");
+        printf("|     |    |          |       |  O    O  |       |          |    |     |\n");
+        printf("|     |    |          |       |    __    |       |          |    |     |\n");
+        printf("|     |    |          |       |__________|       |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
+        printf("|     |    |          |                          |          |    |     |\n");
+        printf("|     |    |          |__________________________|          |    |     |\n");
+        printf("|     |    |               ___  ___  ___  ___               |    |     |\n");
+        printf("|     |    |              |   ||   ||   ||   |              |    |     |\n");
+        printf("|     |    |              | - || - || - || - |              |    |     |\n");
+        printf("|     |    |              |___||___||___||___|              |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |________________________________________________|    |     |\n");
+        printf("|     |                                                          |     |\n");
+        printf("|     |__________________________________________________________|     |\n");
+        printf("|______________________________________________________________________|\n");
         
         fflush(stdout); //Cleans the output buffer;
         sleep(2); //Code waits defined time to proceed;
@@ -103,6 +103,37 @@ void successfulOpening()
 
     //=Creating a "successfulOpening()" function to show a success message when the safe is open
     {
+        printf("    ________________________________________________________________\n");
+        printf("   /                                                                \\\n");
+        printf("  /     ________________________________________________________     \\\n");
+        printf(" /     /                                                        \\     \\\n");
+        printf("|     |       ____________________________________________       |     |\n");
+        printf("|     |      /                                            \\      |     |\n");
+        printf("|     |     /                                              \\     |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |            ________________________            |    |     |\n");
+        printf("|     |    |           /                        \\           |    |     |\n");
+        printf("|     |    |          /                          \\          |    |     |\n");
+        printf("|     |    |          |       ____________       |          |    |     |\n");
+        printf("|     |    |          |       |  O    O  |       |          |    |     |\n");
+        printf("|     |    |          |       |   \\__/   |       |          |    |     |\n");
+        printf("|     |    |          |       |__________|       |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
+        printf("|     |    |          |                          |          |    |     |\n");
+        printf("|     |    |          |__________________________|          |    |     |\n");
+        printf("|     |    |               ___  ___  ___  ___               |    |     |\n");
+        printf("|     |    |              |   ||   ||   ||   |              |    |     |\n");
+        printf("|     |    |              | O || P || E || N |              |    |     |\n");
+        printf("|     |    |              |___||___||___||___|              |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |                                                |    |     |\n");
+        printf("|     |    |________________________________________________|    |     |\n");
+        printf("|     |                                                          |     |\n");
+        printf("|     |__________________________________________________________|     |\n");
+        printf("|______________________________________________________________________|\n");
+
+        fflush(stdout);
+        sleep(1);
         printf("\n Muito bem! Parece que você me conhece bem e conseguiu abrir o cofre com sucesso...");
         printf("\n A combinação que você descobriu/encontrou ao final dos deslizamentos é a chave correta para me desbloquear!");
     
@@ -387,7 +418,7 @@ int main()
                 printf("\e[1;1H\e[2J"); //Cleans screen;
     
                 successfulOpening();
-    
+                
                 printf("\n --------------------------------------/--------------------------------------");
                 fflush(stdout); //Cleans the output buffer;
                 sleep(1); //Code waits defined time to proceed;
@@ -489,6 +520,36 @@ int main()
                 trys++;
     
                 combinationAnalysis();
+                
+                printf("    ________________________________________________________________\n");
+                printf("   /                                                                \\\n");
+                printf("  /     ________________________________________________________     \\\n");
+                printf(" /     /                                                        \\     \\\n");
+                printf("|     |       ____________________________________________       |     |\n");
+                printf("|     |      /                                            \\      |     |\n");
+                printf("|     |     /                                              \\     |     |\n");
+                printf("|     |    |                                                |    |     |\n");
+                printf("|     |    |            ________________________            |    |     |\n");
+                printf("|     |    |           /                        \\           |    |     |\n");
+                printf("|     |    |          /                          \\          |    |     |\n");
+                printf("|     |    |          |       ____________       |          |    |     |\n");
+                printf("|     |    |          |       |  .    .  |       |          |    |     |\n");
+                printf("|     |    |          |       |    _     |       |          |    |     |\n");
+                printf("|     |    |          |       |__________|       |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
+                printf("|     |    |          |                          |          |    |     |\n");
+                printf("|     |    |          |__________________________|          |    |     |\n");
+                printf("|     |    |               ___  ___  ___  ___               |    |     |\n");
+                printf("|     |    |              |   ||   ||   ||   |              |    |     |\n");
+                printf("|     |    |              | F || A || I || L |              |    |     |\n");
+                printf("|     |    |              |___||___||___||___|              |    |     |\n");
+                printf("|     |    |                                                |    |     |\n");
+                printf("|     |    |                                                |    |     |\n");
+                printf("|     |    |                                                |    |     |\n");
+                printf("|     |    |________________________________________________|    |     |\n");
+                printf("|     |                                                          |     |\n");
+                printf("|     |__________________________________________________________|     |\n");
+                printf("|______________________________________________________________________|\n");
+
                 
                 printf("\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8); // Shows combination, as the user got it wrong;
                 fflush(stdout); //Cleans the output buffer;
