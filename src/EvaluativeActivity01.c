@@ -3,44 +3,11 @@
 
 #include <unistd.h>
 
-#include <string.h>
-
 #include <locale.h>
 
 #define length 25
 
 void introMessage() {
-    printf("    _______________________________________________________________\n");
-    printf("   /                                                               \\\n");
-    printf("  /     _______________________________________________________     \\\n");
-    printf(" /     /                                                       \\     \\\n");
-    printf("|     |       ___________________________________________       |     |\n");
-    printf("|     |      /                                           \\      |     |\n");
-    printf("|     |     /                                             \\     |     |\n");
-    printf("|     |    |                                               |    |     |\n");
-    printf("|     |    |             _____________________             |    |     |\n");
-    printf("|     |    |            /                     \\            |    |     |\n");
-    printf("|     |    |           /                       \\           |    |     |\n");
-    printf("|     |    |          |         _______         |          |    |     |\n");
-    printf("|     |    |          |        |       |        |          |    |     |\n");
-    printf("|     |    |          |        |   O   |        |          |    |     |\n");
-    printf("|     |    |          |        |_______|        |          |    |     |\n");
-    printf("|     |    |          |                         |          |    |     |\n");
-    printf("|     |    |          |_________________________|          |    |     |\n");
-    printf("|     |    |            ___  ___  ___  ___  ___            |    |     |\n");
-    printf("|     |    |           |   ||   ||   ||   ||   |           |    |     |\n");
-    printf("|     |    |           |   ||   ||   ||   ||   |           |    |     |\n");
-    printf("|     |    |           |___||___||___||___||___|           |    |     |\n");
-    printf("|     |    |                                               |    |     |\n");
-    printf("|     |    |                                               |    |     |\n");
-    printf("|     |    |                                               |    |     |\n");
-    printf("|     |    |_______________________________________________|    |     |\n");
-    printf("|     |                                                         |     |\n");
-    printf("|     |_________________________________________________________|     |\n");
-    printf("|_____________________________________________________________________|\n");
-
-    sleep(2);
-
     printf("\n Olá! Eu sou um cofre virtual...");
     printf("\n Eu represento uma simulação digital de um mecanismo de segurança.");
 
@@ -248,39 +215,12 @@ int main() {
             sleep(3);
             system("cls");
 
+            // C1 = 5 | C2 = 11 | C5 = 3 | C7 = 7 | C8 = 6
+
             if((C1 == 5) && (C2 == 11) && (C5 == 3) && (C7 == 7) && (C8 == 6)) {
                 combinationAnalysis();
 
                 system("cls");
-
-                printf("    _______________________________________________________________\n");
-                printf("   /                                                               \\\n");
-                printf("  /     _______________________________________________________     \\\n");
-                printf(" /     /                                                       \\     \\\n");
-                printf("|     |       ___________________________________________       |     |\n");
-                printf("|     |      /                                           \\      |     |\n");
-                printf("|     |     /                                             \\     |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |             _____________________             |    |     |\n");
-                printf("|     |    |            /                     \\            |    |     |\n");
-                printf("|     |    |           /                       \\           |    |     |\n");
-                printf("|     |    |          |         _______         |          |    |     |\n");
-                printf("|     |    |          |        |       |        |          |    |     |\n");
-                printf("|     |    |          |        |   X   |        |          |    |     |\n");
-                printf("|     |    |          |        |_______|        |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
-                printf("|     |    |          |                         |          |    |     |\n");
-                printf("|     |    |          |_________________________|          |    |     |\n");
-                printf("|     |    |               ___  ___  ___  ___              |    |     |\n");
-                printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
-                printf("|     |    |              | O || P || E || N |             |    |     |\n");
-                printf("|     |    |              |___||___||___||___|             |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |_______________________________________________|    |     |\n");
-                printf("|     |                                                         |     |\n");
-                printf("|     |_________________________________________________________|     |\n");
-                printf("|_____________________________________________________________________|\n");
 
                 successfulOpening();
 
@@ -353,36 +293,9 @@ int main() {
 
                 combinationAnalysis();
 
-                // printf("\n\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
+                printf("\n\n Sua combinação final foi: | %d | %d | %d | %d | %d |\n\n", C1, C2, C5, C7, C8);
 
-                printf("    _______________________________________________________________\n");
-                printf("   /                                                               \\\n");
-                printf("  /     _______________________________________________________     \\\n");
-                printf(" /     /                                                       \\     \\\n");
-                printf("|     |       ___________________________________________       |     |\n");
-                printf("|     |      /                                           \\      |     |\n");
-                printf("|     |     /                                             \\     |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |             _____________________             |    |     |\n");
-                printf("|     |    |            /                     \\            |    |     |\n");
-                printf("|     |    |           /                       \\           |    |     |\n");
-                printf("|     |    |          |         _______         |          |    |     |\n");
-                printf("|     |    |          |        |       |        |          |    |     |\n");
-                printf("|     |    |          |        |   X   |        |          |    |     |\n");
-                printf("|     |    |          |        |_______|        |          |    |     |\n"); // Representation of the safe, just to make the code better looking;
-                printf("|     |    |          |                         |          |    |     |\n");
-                printf("|     |    |          |_________________________|          |    |     |\n");
-                printf("|     |    |               ___  ___  ___  ___              |    |     |\n");
-                printf("|     |    |              |   ||   ||   ||   |             |    |     |\n");
-                printf("|     |    |              | F || A || I || L |             |    |     |\n");
-                printf("|     |    |              |___||___||___||___|             |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |                                               |    |     |\n");
-                printf("|     |    |_______________________________________________|    |     |\n");
-                printf("|     |                                                         |     |\n");
-                printf("|     |_________________________________________________________|     |\n");
-                printf("|_____________________________________________________________________|\n");
+                sleep(1);
 
                 printf("\n\n Hmmm... me parece que a senha inserida ao término dos deslizamentos está incorreta!");
                 printf("\n Ainda lhe restam %d tentativa(s) até o fechamento completo do cofre.\n\n", 3-trys);
