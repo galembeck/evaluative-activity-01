@@ -1,3 +1,4 @@
+
 #include <stdio.h> // Including/importing the <stdio.h> (Standard Input Output) library;
 
 #include <stdlib.h> // Including/importing the <stdlib.h> (Standard System) library;
@@ -53,33 +54,35 @@ void introMessage()
         sleep(1); //Code waits defined time to proceed;
         
         printf("\n\n Acho que para descobrir se eu te pertenço, será necessário acertar a senha/combinação, para que eu possa abrir e te entregar seus pertences :)");
-                                                                                                // - The code says it has a combination needed for it to unlock itself
+                                                                                                // - The code says it has a combination needed for it to unlock itself;
         fflush(stdout); //Cleans the output buffer;
         sleep(1); //Code waits defined time to proceed;
         
         fflush(stdout); //Cleans the output buffer;
         sleep(2); //Code waits defined time to proceed;
-        printf("\n\n Aqui está o funcionamento:");
+        printf("\n\n Aqui está o funcionamento:"); // - The code introducts how it works;
         fflush(stdout); //Cleans the output buffer;
         sleep(2); //Code waits defined time to proceed;
-        printf("\n\n\t Possuo uma barra de 25 posições, começando na posição 10, que pode ser movida até 4 vezes.");
+        printf("\n\n\t Possuo uma barra de 25 posições, começando na posição 10, que pode ser movida até 4 vezes."); /* - The code says it has a bar of 25 positions, 
+                                                                                                                                                    starting at 10;*/
         
-        printf("\n\t Durante cada movimento, os números entre os novos limites estabelecidos serão contados.");
+        printf("\n\t Durante cada movimento, os números entre os novos limites estabelecidos serão contados."); /* - The code says that, after every movement, the numbers
+                                                                                                                                          in between limits are counted;*/
         
         fflush(stdout); //Cleans the output buffer;
         sleep(2); //Code waits defined time to proceed;
-        printf("\n\n Agora, com todas as instruções, podemos começar!");
+        printf("\n\n Agora, com todas as instruções, podemos começar!"); // - The code tells the user it will now start;
     }
     //======================================================================================================================================================================
     
-void combinationAnalysis() 
+void combinationAnalysis()
 
     //=Creating a "combinationAnalysis()" function to show a loading message================================================================================================
     {
         fflush(stdout); //Cleans the output buffer;
         sleep(1); //Code waits defined time to proceed;
     
-        printf("\n Analisando combinação...");
+        printf("\n Analisando combinação..."); // - The code tells the user it is analizing the combinatior generated;
     
         fflush(stdout); //Cleans the output buffer;
         sleep(1); //Code waits defined time to proceed;
@@ -101,7 +104,7 @@ void combinationAnalysis()
     
 void successfulOpening()
 
-    //=Creating a "successfulOpening()" function to show a success message when the safe is open
+    //=Creating a "successfulOpening()" function to show a success message when the safe is open============================================================================
     {
         printf("    ________________________________________________________________\n");
         printf("   /                                                                \\\n");
@@ -134,14 +137,15 @@ void successfulOpening()
 
         fflush(stdout);
         sleep(1);
-        printf("\n Muito bem! Parece que você me conhece bem e conseguiu abrir o cofre com sucesso...");
-        printf("\n A combinação que você descobriu/encontrou ao final dos deslizamentos é a chave correta para me desbloquear!");
+        printf("\n Muito bem! Parece que você me conhece bem e conseguiu abrir o cofre com sucesso..."); // - The code gives props to the user for opening the safe;
+        printf("\n A combinação que você descobriu/encontrou ao final dos deslizamentos é a chave correta para me desbloquear!"); // - The code states the user was right;
     
         fflush(stdout); //Cleans the output buffer;
         sleep(1); //Code waits defined time to proceed;
-        printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)");
-        printf("\n\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança.");
-        printf("\n\n Obrigado por utilizar meu serviço!\n");
+        printf("\n\n Agora que me encontro aberto, você pode acessar seus pertences com segurança :)"); /* - The code tells the user it can now acces what was inside
+                                                                                                                                                            safely;*/
+        printf("\n\n Por favor, lembre-se de fechar o cofre corretamente após a utilização para garantir sua segurança."); // - The code warns the user to close the safe;
+        printf("\n\n Obrigado por utilizar meu serviço!\n"); // - The code thanks the user;
     }
     //======================================================================================================================================================================
     
@@ -149,12 +153,12 @@ void unsuccessfulOpening()
 
     //=Creating a "unccessfulOpening()" function to show a unsuccess message when the safe keep closed======================================================================
     {
-        printf("\n Que pena! Suas tentativas de abertura do cofre se esgotaram :(");
-        printf("\n Parece que você não conseguiu encontrar a combinação correta para me abrir...");
+        printf("\n Que pena! Suas tentativas de abertura do cofre se esgotaram :("); // - The code states that the user's tries have ended;
+        printf("\n Parece que você não conseguiu encontrar a combinação correta para me abrir..."); // - The code tells the user that it could not open the safe;
     
-        printf("\n\n Infelizmente, não poderei lhe entregar seus pertences neste momento.");
+        printf("\n\n Infelizmente, não poderei lhe entregar seus pertences neste momento."); // - The code says it can't give access for the user;
     
-        printf("\n\n Agradeço suas tentativas e lamento por qualquer incoveniente causado. Tenha um ótimo dia.");
+        printf("\n\n Agradeço suas tentativas e lamento por qualquer incoveniente causado. Tenha um ótimo dia."); // - The code thanks the user for trying;
     }
     //======================================================================================================================================================================
 
@@ -166,13 +170,15 @@ int main()
 
     //=Creating the "main" structure of the code/project====================================================================================================================
     {
-        setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library
+        setlocale(LC_ALL, "portuguese"); // Setting the project language to "portuguese" with the <locale.h> library;
     
-        int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector ("safe_bar") and including its values (1, 2, 5, 7, 8)
-        int trys = 0, k, i, movements, return_option, closure_option, initial_position, position_to; // Creating new variables to be used during the development of the code/project
-        int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters
+        int safe_bar[length] = {1, 5, 7, 8, 2, 2, 7, 8, 2, 5, 7, 8, 2, 1, 5, 2, 7, 8, 2, 1, 1, 2, 7, 8, 2}; // Creating the vector "safe_bar" and including its values (1, 2, 5, 7, 8) - which are the numbers inside the safe's bar;
+        
+        int trys = 0, k, i, movements, return_option, closure_option, initial_position, position_to; //Creating new variables to be used during the development of the code/project;
+        
+        int C1, C2, C5, C7, C8; // Creating five variables that are going to be used as counters;
     
-        introMessage(); // Calling function "introMessage()" to show the introduction message in the beginning
+        introMessage(); //Calling function "introMessage()" to show the introduction message in the beginning;
     
         fflush(stdout); //Cleans the output buffer;
         sleep(1); //Code waits defined time to proceed;
@@ -184,7 +190,7 @@ int main()
         printf("\e[1;1H\e[2J"); //Cleans screen;
         /*================================================*/
     
-        do 
+        do
         {
         //==================================================================================================================================================================
             
@@ -324,8 +330,80 @@ int main()
                             
                             break;
                             
+                    //==================================================================================================================================================
+                    }
+                    else if(position_to > 24)
+                    {
                         //==================================================================================================================================================
+                        printf("\n Um número maior que o tamanho da barra foi informado e, consequentemente, o deslocamento foi encerrado!");
+                        
+                        fflush(stdout); //Cleans the output buffer;
+                        sleep(3); //Code waits defined time to proceed;
+                        
+                        printf("\e[1;1H\e[2J"); //Cleans screen;
+                        
+                        printf("\n Ainda é possível retornar ao painel inicial de abertura do cofre...\n\n Para isso, abaixo há 2 opções disponíveis, dentre as quais você deve selecionar entre a 1º ou a 2º opção.\n º Digite \"1\" caso você queira retornar ao painel de deslizamentos.\n º Digite \"2\" caso você queira encerrar o processo de abertura do cofre.\n\n Opção: ");
+                        scanf("%d", &return_option);
+                        
+                        switch(return_option)
+                        {
+                            //==============================================================================================================================================
+                            case 1:
+                                
+                                printf("\n Como a 1º opção foi escolhida, você será, a seguir, redirecionado ao painel de deslizamentos.");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\n\n 3,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\t\t2,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\t\t1,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\e[1;1H\e[2J"); //Cleans screen;
+                                
+                                flag = 0;
+                                
+                                break;
+                            
+                            case 2:
+                                
+                                printf("\n Como a 2º opção foi escolhida, o processo de abertura do cofre será encerrado!");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\n\n 3,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\t\t2,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                printf("\t\t1,");
+                                
+                                fflush(stdout); //Cleans the output buffer;
+                                sleep(1); //Code waits defined time to proceed;
+                                
+                                exit(0);
+                                
+                            default:
+                                
+                                printf("\n Nenhuma opção válida encontrada! Selecione entre as opções listadas acima.");
+                                
+                        //==============================================================================================================================================
                         }
+                        
+                        break;
+                        
+                    //==================================================================================================================================================
+                    }
     
                 if (position_to > initial_position) 
                 {
