@@ -117,8 +117,8 @@ int main() {
             printf("\n º Informe o limite (posição) para o \"%dº\" deslocamento: ", k+1);
             scanf("%d", &position_to);
 
-            if(position_to < 0) {
-                printf("\n Um número negativo foi informado e, consequentemente, o deslocamento foi encerrado!\n");
+            if((position_to < 0) || (position_to > 24)) {
+                printf("\n Um número negativo ou superior ao comprimento da barra foi informado e, consequentemente, o deslocamento foi encerrado!\n");
 
                 sleep(3);
 
